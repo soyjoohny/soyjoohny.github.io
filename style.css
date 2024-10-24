@@ -129,6 +129,7 @@ section.topo-do-site.flex {
 
 .topo-do-site h1 {
     color: #fff;
+    text-align: left;
     font-size: 38px;
     line-height: 40px;
     transition: transform 0.8s; 
@@ -201,6 +202,7 @@ section.games::before {
 
 section.games h2 {
     color: #ffffff;
+    text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
     position: relative; 
@@ -376,6 +378,7 @@ section.team::before {
 
 section.team h2 {
     color: #ffffff;
+    text-align: center;
     font-size: 32px;
     margin-bottom: 50px;
     position: relative; 
@@ -453,6 +456,20 @@ section.sobre-nos {
     align-items: center; 
     flex-wrap: wrap; 
     justify-content: center; 
+    text-align: justify; 
+}
+
+/* Centralizando e justificando para dispositivos móveis */
+@media (max-width: 768px) {
+    section.sobre-nos {
+        padding: 20px 10%; 
+        background-attachment: scroll; 
+    }
+
+    .sobre-nos-conteudo {
+        flex-direction: column; 
+        text-align: justify;
+    }
 }
 
 .imagem-sobre-nos {
@@ -478,7 +495,7 @@ section.sobre-nos::before {
 
 section.sobre-nos h2 {
     color: #fff;
-    text-align: justify;
+    text-align: center;
     font-size: 32px;
     margin-top: 30px;
     margin-bottom: 20px;
