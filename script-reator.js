@@ -1,88 +1,80 @@
+// Declaração de variáveis para o jogo
 const boxes = document.querySelectorAll('.box');
 const sequenceContainer = document.querySelector('.sequence-container');
 const startButton = document.getElementById('startButton');
-let sequence = []; // Armazena a sequência a ser seguida
-let playerInput = []; // Armazena as escolhas do jogador
-let gameStarted = false; // Controla o estado do jogo
-let blinkInterval; // Armazena o intervalo da sequência
+let sequence = []; 
+let playerInput = []; 
+let gameStarted = false; 
+let blinkInterval; 
 
 // Função para embaralhar a sequência
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Troca elementos
+        [array[i], array[j]] = [array[j], array[i]]; 
     }
 }
 
 // Função para fazer os botões brilharem na ordem correta
 function blinkSequence() {
-    let index = 0; // Índice para a sequência
+    let index = 0; 
 
     // Função para piscar os botões
     blinkInterval = setInterval(() => {
-        // Se todas as sequências foram mostradas, para a animação
         if (index >= sequence.length) {
             clearInterval(blinkInterval);
             return;
         }
-
-        // Identifica o botão correspondente na sequência
         const currentValue = sequence[index];
         const boxToBlink = [...boxes].find(box => box.dataset.value == currentValue);
-
-        // Adiciona a classe de brilho ao botão
         boxToBlink.classList.add('blink');
-
-        // Remove a classe de brilho após 500ms
         setTimeout(() => {
             boxToBlink.classList.remove('blink');
         }, 500);
 
         index++;
-    }, 1000); // Tempo entre os pisca-pisca
+    }, 1000); 
 }
 
 // Função para ativar uma caixa
 function activateBox() {
-    if (!gameStarted) return; // Não ativa se o jogo não começou
+    if (!gameStarted) return; 
 
-    this.classList.add('active'); // Adiciona a classe 'active' à caixa
-    playerInput.push(parseInt(this.dataset.value)); // Adiciona o valor à entrada do jogador
-
-    // Verifica se a sequência está correta
+    this.classList.add('active'); 
+    playerInput.push(parseInt(this.dataset.value)); 
     checkSequence();
 }
 
 // Função para verificar se a sequência do jogador está correta
 function checkSequence() {
-    const currentIndex = playerInput.length - 1; // Índice atual do jogador
+    const currentIndex = playerInput.length - 1; 
     if (playerInput[currentIndex] !== sequence[currentIndex]) {
         alert('Você perdeu!');
-        resetGame(); // Reseta o jogo
+        resetGame(); 
         return;
     }
     if (playerInput.length === sequence.length) {
         alert('Parabéns, você venceu!');
-        resetGame(); // Reseta o jogo
+        resetGame(); 
     }
 }
 
 // Função para resetar o jogo
 function resetGame() {
-    clearInterval(blinkInterval); // Interrompe a sequência de piscar
+    clearInterval(blinkInterval); 
     boxes.forEach(box => {
-        box.classList.remove('active'); // Remove a classe 'active' de todas as caixas
+        box.classList.remove('active'); 
     });
-    playerInput = []; // Limpa a entrada do jogador
-    gameStarted = false; // Reseta o estado do jogo
+    playerInput = []; 
+    gameStarted = false; 
 }
 
 // Função para iniciar o jogo e iniciar a sequência de brilho
 function startGame() {
-    sequence = Array.from({ length: 9 }, (_, i) => i + 1); // Define a sequência de 1 a 9
-    shuffle(sequence); // Embaralha a sequência
-    blinkSequence(); // Inicia o brilho na sequência
-    gameStarted = true; // Começa o jogo
+    sequence = Array.from({ length: 9 }, (_, i) => i + 1); 
+    shuffle(sequence); 
+    blinkSequence(); 
+    gameStarted = true; 
 }
 
 // Adiciona evento de clique ao botão de iniciar
