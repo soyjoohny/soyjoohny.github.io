@@ -49,6 +49,8 @@ startButton.addEventListener('click', startGame);
 
 // Função para iniciar o jogo
 function startGame() {
+    localStorage.clear();
+    
     startScreen.style.display = 'none';
     road.style.display = 'block';
     scoreDisplay.style.display = 'block';
@@ -146,50 +148,36 @@ function restartGame() {
     playerX = 280; 
     playerY = 720; 
     obstaclePositions = [-80, -200, -320]; 
-    speed = 5; // Velocidade inicial
-    score = 0; // Reinicia a pontuação
+    speed = 5; 
+    score = 0; 
+    scoreDisplay.textContent = 'Pontos: ' + score; 
     player.style.left = playerX + 'px';
     player.style.top = playerY + 'px';
     gameOverScreen.style.opacity = 0; 
     gameOverScreen.style.visibility = 'hidden'; 
     road.style.display = 'block'; 
     scoreDisplay.style.display = 'block'; 
-    scoreDisplay.textContent = 'Pontos: ' + score; 
     gameInterval = setInterval(updateGame, 20); 
     document.addEventListener('keydown', startMove); 
     document.addEventListener('keyup', stopMove); 
 }
 
+
 // Função para salvar a pontuação no ranking
 function saveScore(score) {
-    // Obtenha o ranking salvo no localStorage, ou crie um novo se não houver
     let ranking = JSON.parse(localStorage.getItem('rank')) || [];
-    
-    // Adicione a nova pontuação ao ranking
     ranking.push({ score }); 
-
-    // Ordene o ranking em ordem decrescente (pontuações mais altas primeiro)
     ranking.sort((a, b) => b.score - a.score);
-
-    // Limite o ranking a 5 entradas
     ranking = ranking.slice(0, 5);
-
-    // Salve novamente no localStorage
     localStorage.setItem('rank', JSON.stringify(ranking));
-
-    // Retorne o ranking atualizado
     return ranking;
 }
 
 // Função para exibir o ranking no fim do jogo
 function displayRanking() {
     const rankingList = document.querySelector('.ranklistinha');
-    rankingList.innerHTML = ''; // Limpa o ranking anterior
-
-    // Obtenha o ranking salvo no localStorage
+    rankingList.innerHTML = ''; 
     const ranking = JSON.parse(localStorage.getItem('rank')) || [];
-
-    // Exiba os 5 melhores jogadores
     ranking.forEach((entry, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = `${index + 1}. Pontos: ${entry.score}`; 
@@ -200,35 +188,22 @@ function displayRanking() {
 // Seleciona o botão de voltar ao início
 const inicioButton = document.querySelector('.botaoinicio');
 
+// Função do botão voltar ao ínicio
 function voltarInicio() {
-    // Reinicia o estado do jogo
+    localStorage.clear(); 
     playerX = 280; 
     playerY = 720; 
     score = 0; 
     obstaclePositions = [-80, -200, -320]; 
     speed = 5; 
-
-    // Atualiza a posição do jogador na tela
     player.style.left = playerX + 'px';
     player.style.top = playerY + 'px';
-
-    // Esconde a tela de Game Over
     gameOverScreen.style.opacity = 0;
     gameOverScreen.style.visibility = 'hidden';
-
-    // Esconde a estrada e a pontuação
     road.style.display = 'none';
     scoreDisplay.style.display = 'none';
-
-    // Mostra a tela inicial
     startScreen.style.display = 'flex';
-
-    // Atualiza o placar na tela inicial 
-    scoreDisplay.textContent = 'Pontos: ' + score; // Reseta o placar para zero na tela inicial
+    scoreDisplay.textContent = 'Pontos: ' + score; 
 }
 
-// Adiciona um evento ao botão de voltar ao início
 inicioButton.addEventListener('click', voltarInicio);
-
-
-
