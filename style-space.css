@@ -1,0 +1,189 @@
+/* Remove margens padrão e esconde a barra de rolagem */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Estiliza o contêiner do jogo */
+.jogo {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(fundo.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/* Estiliza a tela inicial */
+.telacomeço {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Estiliza o título do jogo */
+.titulo {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Estiliza o botão de início */
+.botaoiniciar {
+    padding: 20px 40px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive; 
+    background-color: #f44336; 
+    color: white; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out; 
+}
+
+.botaoiniciar:hover {
+    transform: scale(1.01); 
+}
+
+.botaoiniciar:active {
+    transform: scale(0.98); 
+}
+
+
+/* Estiliza a área do jogo */
+.fundo {
+    position: relative;
+    width: 600px;
+    height: 900px;
+    background: url('background.jpg') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    display: none;
+}
+
+/* Estiliza o jogador */
+.player {
+    position: absolute;
+    bottom: 20px;
+    left: 40px; 
+    width: 90px;
+    height: 90px;
+    background: url('player.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Estiliza os obstáculos */
+.axteroide .asteroides {
+    position: absolute;
+    top: -80px;
+    width: 80px;
+    height: 90px;
+    background: url('obstacle.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Estiliza a pontuação com uma fonte retro */
+.pontos {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font: bold;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    display: none;
+}
+
+/* Estiliza a tela de fim de jogo */
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Estiliza a imagem de fim de jogo */
+.game-over img {
+    width: 300px;
+}
+
+/* Estiliza o botão de reinício */
+.botaorestart {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive; 
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.botaorestart:hover {
+    transform: scale(1.01);
+}
+
+.botaorestart:active {
+    transform: scale(0.98); 
+}
+
+
+/* Estiliza a seção de ranking */
+.rank {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive; 
+    color: #ffffff;
+}
+
+/* Estiliza a lista de ranking */
+.ranklistinha {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Estiliza o botão de voltar ao início */
+.botaoinicio {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.botaoinicio:hover {
+    transform: scale(1.01); 
+}
+
+.botaoinicio:active {
+    transform: scale(0.98); 
+}

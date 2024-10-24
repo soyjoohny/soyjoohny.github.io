@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMind</title>
+
+    <!-- Importação de fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon e arquivo de estilização externo -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Vídeo de fundo configurado para tocar automaticamente, sem som e em loop -->
+        <video class="video" autoplay muted loop>
+            <source src="videodaora.mp4" type="video/mp4">
+        </video>
+
+        <!-- Cabeçalho da página, contendo a logo e o menu de navegação -->
+        <header id="top">
+            <div class="interface-header">
+                <!-- Logo da empresa TechMind -->
+                <div class="logo">
+                    <a href="index.html">
+                        <h2>TechMind</h2>
+                    </a>
+                </div> <!-- logo -->
+
+                <!-- Menu de navegação principal -->
+                <nav class="menu-desktop">
+                    <ul>
+                        <li><a href="#games">JOGOS</a></li>
+                        <li><a href="#team">NOSSA EQUIPE</a></li>
+                        <li><a href="#sobre">SOBRE NÓS</a></li>
+                    </ul>
+                </nav> <!-- menu-desktop -->
+            </div>
+        </header> <!-- Cabeçalho da página -->
+
+        <!-- Seção de introdução com banner principal -->
+        <section class="topo-do-site">
+            <div class="interface-banner">
+                <div class="flex">
+                    <div class="text-topo-site">
+                        <h1>JOGUE & EXPLORE<span>:</span> BEM-VINDO À TECHMIND<span>.</span></h1>
+                        <p>Prontos para embarcar nessa jornada?</p>
+                        <div class="experiencia">
+                            <a href="#games">
+                                <button>Começar experiência</button>
+                            </a>
+                        </div>
+                    </div> <!-- text-topo-site -->
+                </div> <!-- flex -->
+            </div> <!-- interface-banner -->
+        </section> <!-- topo-do-site -->
+    </div>
+
+    <main>
+        <!-- Seção de portfólio de jogos da empresa -->
+        <section id="games" class="games">
+            <div class="interface">
+                <h2>Nosso Portfólio de Jogos:</h2>
+                <div class="game-list">
+                    <!-- Jogo 1: 8 Bit Racer -->
+                    <div class="game-item-1">
+                        <h3>8 Bit Racer</h3>
+                        <p>Uma emocionante corrida retrô, repleta de gráficos 8-bit vibrantes e uma trilha sonora cativante.</p>
+                        <a href="index-racer.html" target="_self">Jogar Agora</a>
+                    </div>
+
+                    <!-- Jogo 2: Space Adventure -->
+                    <div class="game-item-3">
+                        <h3>Space Adventure</h3>
+                        <p>Assuma o controle de um OVNI e desvie de meteoros em alta velocidade pelo espaço.</p>
+                        <a href="index-space.html" target="_self">Jogar Agora</a>
+                    </div>
+                    
+                      <!-- Jogo 3: Jogo do Reator -->
+                      <div class="game-item-2">
+                        <h3>Jogo do Reator</h3>
+                        <p>Desafie sua mente decorando sequências e padrões no painel de memória estilo Among Us.</p>
+                        <a href="index-reator.html" target="_self">Jogar Agora</a>
+                        
+                    </div>
+                </div> <!-- game-list -->
+            </div> <!-- interface -->
+        </section> <!-- games -->
+
+        <!-- Seção de apresentação da equipe da empresa -->
+        <section id="team" class="team">
+            <div class="interface">
+                <h2>Nossa Equipe:</h2>
+                <div class="team-list">
+                    <!-- Membro da equipe: Vitória Eduarda -->
+                    <div class="team-member">
+                        <img src="vitoria.jpg" alt="Vitória Eduarda" class="team-photo">
+                        <h3>Vitória Eduarda</h3>
+                        <p><span style="color: rgba(138, 0, 255, 0.5)"><b>Designer da empresa</b></span></p>
+                        <p>Responsável pela criação de elementos visuais e sprites.</p>
+                    </div>
+
+                    <!-- Membro da equipe: Priscilla Faria -->
+                    <div class="team-member">
+                        <img src="priscila.jpg" alt="Priscilla Faria" class="team-photo">
+                        <h3>Priscilla Faria</h3>
+                        <p><span style="color: rgba(138, 0, 255, 0.5);"><b>Designer dos sprites</b></span></p>
+                        <p>Focada na elaboração de gráficos e animações.</p>
+                    </div>
+
+                    <!-- Membro da equipe: Ryan Braz -->
+                    <div class="team-member">
+                        <img src="ryan.jpg" alt="Ryan Braz" class="team-photo">
+                        <h3>Ryan Braz</h3>
+                        <p><span style="color: rgba(138, 0, 255, 0.5);"><b>Programador</b></span></p>
+                        <p>Desenvolvedor do jogo do Reator.</p>
+                    </div>
+
+                    <!-- Membro da equipe: Johnny William -->
+                    <div class="team-member">
+                        <img src="johnny2.jpg" alt="Johnny William" class="team-photo">
+                        <h3>Johnny William</h3>
+                        <p><span style="color: rgba(138, 0, 255, 0.5);"><b>Programador</b></span></p>
+                        <p>Desenvolvedor do jogo 8 Bit Racer e da criação do site.</p>
+                    </div>
+
+                    <!-- Membro da equipe: Davi do Rosário -->
+                    <div class="team-member">
+                        <img src="rosario.jpg" alt="Davi do Rosário" class="team-photo">
+                        <h3>Davi do Rosário</h3>
+                        <p><span style="color: rgba(138, 0, 255, 0.5);"><b>Programador</b></span></p>
+                        <p>Desenvolvedor do jogo Space Adventure.</p>
+                    </div>
+                </div>
+            </div> <!-- interface -->
+        </section> <!-- team -->
+
+        <!-- Seção sobre a empresa TechMind -->
+        <section id="sobre" class="sobre-nos">
+            <div class="interface">
+                <h2>Sobre Nós:</h2>
+                <div class="sobre-nos-conteudo">
+                    <div class="texto-com-borda">
+                        <p>A TechMind, fundada em 2023, é uma empresa de jogos comprometida em criar experiências interativas para todas as plataformas. Nossa missão é desenvolver jogos envolventes que combinem criatividade e tecnologia, proporcionando momentos divertidos para os jogadores. Contamos com uma equipe apaixonada que está sempre em busca de novas tendências. Estamos aqui para oferecer entretenimento digital de qualidade e tornar cada jogo uma experiência memorável. Junte-se a nós e descubra o que temos a tem a oferecer! ;) </p>
+                    </div>
+                    <!-- Logo da empresa na seção Sobre nós -->
+                    <img src="logo-tech2.png" alt="Descrição da Imagem" class="imagem-sobre-nos">
+                </div> <!-- sobre-nos-conteudo -->
+            </div> <!-- interface -->
+        </section> <!-- sobre nós -->
+
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="interface">
+            <p>&copy; 2024 TechMind. Todos os direitos reservados.</p>
+        </div> <!-- interface -->
+    </footer>
+
+    <!-- Importação do arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

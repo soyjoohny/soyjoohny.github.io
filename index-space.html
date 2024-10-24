@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Adventure</title>
+    <link rel="stylesheet" href="style-space.css">
+    <link rel="shortcut icon" href="player.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- divs principais -->
+    <div class="jogo">
+        <div class="telacomeço">
+            <img src="logo (2).png" alt="space sla oq" class="titulo">
+            <button class="botaoiniciar">começar</button>
+        </div>
+
+        <div class="fundo">
+            <div class="player"></div>
+            <div class="axteroide">
+                <div class="asteroides"></div>
+                <div class="asteroides"></div>
+                <div class="asteroides"></div>
+            </div>
+        </div>
+
+        <div class="pontos">
+            Pontos: 0
+        </div>
+    </div>
+
+    <div class="game-over">
+        <img src="game-over-img.png" alt="Game-Over">
+        <!-- Exibe o ranking -->
+        <div class="rank">
+            <h2>Placar</h2>
+            <ol class="ranklistinha">
+                <!-- Lista dinâmica de ranking -->
+            </ol>
+        </div>
+        <!-- Botão para reiniciar o jogo -->
+        <button class="botaorestart">Recomeçar</button>
+        <!-- Botão para voltar ao início -->
+        <button class="botaoinicio">Voltar ao Início</button>
+    </div>
+    
+    <script src="script-space.js"></script>
+</body>
+</html>

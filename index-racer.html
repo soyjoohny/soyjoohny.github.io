@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 Bit Racer</title>
+  
+  <!-- Ícone da aba do navegador -->
+  <link rel="icon" href="car07.png">
+  
+  <!-- Importa a fonte do Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+
+<!-- Linka o CSS e o JS no HTML-->
+  <link rel="stylesheet" href="style-racer.css">
+  <script src="script-racer.js" defer></script>
+  
+</head>
+
+<body translate="no"> <!-- Define que o conteúdo da página não deve ser traduzido -->
+
+<!-- divs principais do jogo -->
+  <div id="game"> 
+    <div id="road">
+      <div id="cloud"></div>
+      <div id="hero"></div> 
+    </div>
+
+    <div id="hud"> 
+      <span id="time" class="topUI">0</span> 
+      <span id="score" class="topUI">0</span> 
+      <span id="lap" class="topUI">0'00"000</span>
+      <span id="tacho">0</span> 
+    </div>
+
+    <!-- divs da tela inicial -->
+    <div id="home"> 
+      <h1>8 Bit Racer</h1> 
+      <p id="text"></p> 
+
+       <!-- Área para exibir a pontuação -->
+      <div id="highscore"></div>
+    </div>
+  </div>
+
+ <!-- Área de controles do jogo -->
+  <div id="controls">
+    <span><span>C</span>Inserir ficha</span> 
+    <span><span>M</span>Mudo</span>
+    <span><span>&lt;</span><span>&gt;</span>Mover</span> 
+    <span><span>&lt;</span><span>&gt;</span>Acelerar</span> 
+  </div>
+</body>
+</html>
+
