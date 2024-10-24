@@ -4,6 +4,7 @@ const startButton = document.getElementById('startButton');
 let sequence = []; // Armazena a sequência a ser seguida
 let playerInput = []; // Armazena as escolhas do jogador
 let gameStarted = false; // Controla o estado do jogo
+let blinkInterval; // Armazena o intervalo da sequência
 
 // Função para embaralhar a sequência
 function shuffle(array) {
@@ -18,10 +19,10 @@ function blinkSequence() {
     let index = 0; // Índice para a sequência
 
     // Função para piscar os botões
-    const interval = setInterval(() => {
+    blinkInterval = setInterval(() => {
         // Se todas as sequências foram mostradas, para a animação
         if (index >= sequence.length) {
-            clearInterval(interval);
+            clearInterval(blinkInterval);
             return;
         }
 
@@ -56,18 +57,19 @@ function activateBox() {
 function checkSequence() {
     const currentIndex = playerInput.length - 1; // Índice atual do jogador
     if (playerInput[currentIndex] !== sequence[currentIndex]) {
-        alert('Voce perdeu!');
+        alert('Você perdeu!');
         resetGame(); // Reseta o jogo
         return;
     }
     if (playerInput.length === sequence.length) {
-        alert('Parabéns, você venceu !'); // Mensagem de sucesso
+        alert('Parabéns, você venceu!');
         resetGame(); // Reseta o jogo
     }
 }
 
 // Função para resetar o jogo
 function resetGame() {
+    clearInterval(blinkInterval); // Interrompe a sequência de piscar
     boxes.forEach(box => {
         box.classList.remove('active'); // Remove a classe 'active' de todas as caixas
     });
