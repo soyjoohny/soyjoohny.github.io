@@ -452,13 +452,13 @@ section.sobre-nos {
     display: flex;
     align-items: center; 
     flex-wrap: wrap; 
-    justify-content: space-between; 
+    justify-content: center; 
 }
 
 .imagem-sobre-nos {
-    max-width: 100%; 
+    max-width: 100%;
+    margin: 0 auto; 
     width: 50%; 
-    margin-left: 20px; 
     border-radius: 500px; 
 }
 
@@ -513,7 +513,6 @@ section.sobre-nos .imagem-sobre-nos {
 section.sobre-nos .imagem-sobre-nos:hover { 
     transform: scale(1.05); 
 }
-
 
 /* ESTILO DO RODAPÉ */
 footer {
